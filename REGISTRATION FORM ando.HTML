@@ -1,0 +1,129 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #6a0dad; /* Purple background */;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: (0,0,1);
+      margin: (0,0,1); }
+
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #6a0dad;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .gender-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .gender-group label {
+      font-weight: normal;
+      margin-right: 10px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #550a8a;
+    }
+
+    .thank-you {
+      display: none;
+      font-size: 22px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container" id="form-container">
+    <h2>Student Registration</h2>
+    <form id="registrationForm">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="birthday">Birthday</label>
+      <input type="date" id="birthday" name="birthday" required>
+
+      <div class="gender-group">
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="male" required> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="other"> Other</label>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <div class="thank-you" id="thankYouMessage">
+    THANK YOU, KAMSAMNIDAAA! 💜
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const formContainer = document.getElementById('form-container');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from reloading page
+      formContainer.style.display = 'none';
+      thankYouMessage.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
